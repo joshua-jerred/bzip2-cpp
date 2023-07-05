@@ -13,6 +13,9 @@
 
 namespace bzip2 {
 
+/**
+ * @brief The result of a bzip2 operation.
+ */
 enum class Result : int {
   SUCCESS = 0,
   INPUT_FILE_DOES_NOT_EXIST = 1,
@@ -23,9 +26,25 @@ enum class Result : int {
   FAILED_TO_END = 6
 };
 
+/**
+ * @brief Compresses a file using bzip2.
+ *
+ * @param input - The path to the input file.
+ * @param output - The path to the output file.
+ * @return Result - Result::SUCCESS if the operation was successful, otherwise
+ * the error code.
+ */
 Result compress(const std::filesystem::path &input,
                 const std::filesystem::path &output);
 
+/**
+ * @brief Decompress a file using bzip2.
+ *
+ * @param input - The path to the input file.
+ * @param output - The path to the output file.
+ * @return Result - Result::SUCCESS if the operation was successful, otherwise
+ * the error code.
+ */
 Result decompress(const std::filesystem::path &input,
                   const std::filesystem::path &output);
 
